@@ -12,7 +12,15 @@ namespace s8 {
              * The relative treshold can be set as second parameter.
              */
             bool is_zero(double value, double treshold = 0.000001) {
-                return std::abs(value) < 0.000001;
+                return std::abs(value) < treshold;
+            }
+
+            /**
+             * Returns true if the given value is relatively close to each other. Otherwise false.
+             * The relative treshold can be set as third parameter.
+             */
+            bool is_equal(double value, double other_value, double treshold = 0.000001) {
+                return std::abs(value - other_value) < treshold;
             }
 
             /**
